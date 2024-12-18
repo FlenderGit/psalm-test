@@ -30,6 +30,8 @@ jobs:
         with:
           security_analysis: true
           report_file: results.sarif
+          ssh_key: ${{ secrets.SOME_PRIVATE_KEY }}
+          ssh_key_pub: ${{ secrets.SOME_PUBLIC_KEY }}
       - name: Upload Security Analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v2
         with:
