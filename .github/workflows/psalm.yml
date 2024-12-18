@@ -1,0 +1,29 @@
+name: Psalm Static Analysis
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  static-analysis:
+    name: Static Analysis with Psalm
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2" # Change to your project's PHP version
+          extensions: mbstring, xml, pdo, sqlite
+          coverage: none
+
+      - name: Install Composer dependencies
+        run: composer install --no-progress --no-suggest --prefer-dist
+
+      - name: Psalm – Static Analysis for PHP
+        uses: psalm/psalm-github-actions@2.3.0

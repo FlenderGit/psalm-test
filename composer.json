@@ -1,0 +1,15 @@
+{
+    "name": "trist/test-psal",
+    "autoload": {
+        "psr-4": {
+            "Trist\\TestPsal\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "delo0055",
+            "email": "tristan.deloeil@etudiant.univ-reims.fr"
+        }
+    ],
+    "require": {}
+}
