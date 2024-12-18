@@ -22,8 +22,8 @@ jobs:
           extensions: mbstring, xml, pdo, sqlite
           coverage: none
 
-      - name: Install Composer dependencies
-        run: composer install --no-progress --no-suggest --prefer-dist
+      # - name: Install Composer dependencies
+      #   run: composer install --no-progress --no-suggest --prefer-dist
 
       - name: Psalm
         uses: docker://ghcr.io/psalm/psalm-github-actions
